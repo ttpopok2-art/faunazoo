@@ -1,0 +1,3 @@
+wwwroot\css\style.css
+wwwroot\images\animals\948514e5-18f2-49d7-83d5-7d19f9112fa2.jpg
+wwwroot\images\animals\b4934f5b-1817-4359-bff2-20262867317f.jpg

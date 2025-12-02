@@ -11,7 +11,7 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.AspNetCore.Identity.UI": "8.0.0",
           "Microsoft.EntityFrameworkCore.Design": "9.0.9",
-          "Microsoft.EntityFrameworkCore.Tools": "9.0.9",
+          "Microsoft.EntityFrameworkCore.Tools": "9.0.0",
           "MySql.Data": "9.4.0",
           "Pomelo.EntityFrameworkCore.MySql": "9.0.0"
         },
@@ -458,7 +458,7 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/9.0.9": {
+      "Microsoft.EntityFrameworkCore.Tools/9.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "9.0.9"
         }
@@ -1094,12 +1094,12 @@
       "path": "microsoft.entityframeworkcore.relational/9.0.9",
       "hashPath": "microsoft.entityframeworkcore.relational.9.0.9.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Tools/9.0.9": {
+    "Microsoft.EntityFrameworkCore.Tools/9.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Q8n1PXXJApa1qX8HI3r/YuHoJ1HuLwjI2hLqaCV9K9pqQhGpi6Z38laOYwL2ElUOTWCxTKMDEMMYWfPlw6rwgg==",
-      "path": "microsoft.entityframeworkcore.tools/9.0.9",
-      "hashPath": "microsoft.entityframeworkcore.tools.9.0.9.nupkg.sha512"
+      "sha512": "sha512-qjw+3/CaWiWnyVblvKHY11rQKH5eHQDSbtxjgxVhxGJrOpmjZ3JxtD0pjwkr4y/ELubsXr6xDfBcRJSkX/9hWQ==",
+      "path": "microsoft.entityframeworkcore.tools/9.0.0",
+      "hashPath": "microsoft.entityframeworkcore.tools.9.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/9.0.9": {
       "type": "package",

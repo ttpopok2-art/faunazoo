@@ -17,115 +17,117 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebApplication8
 build_property.RootNamespace = WebApplication8
-build_property.ProjectDir = C:\Users\1\source\repos\WebApplication8\WebApplication8\
+build_property.ProjectDir = C:\Users\ben\Desktop\проект vs\faunazoo\WebApplication8\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\1\source\repos\WebApplication8\WebApplication8
+build_property.MSBuildProjectDirectory = C:\Users\ben\Desktop\проект vs\faunazoo\WebApplication8
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Animals/Create.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Animals/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Animals/Delete.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Animals/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Animals/Edit.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Animals/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Animals/Index.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Animals/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Employees/Create.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Employees/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Employees/Delete.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Employees/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Employees/Edit.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Employees/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Employees/Index.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Employees/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Enclosures/Create.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Enclosures/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jbG9zdXJlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Enclosures/Delete.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Enclosures/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jbG9zdXJlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Enclosures/Edit.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Enclosures/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jbG9zdXJlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Enclosures/Index.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Enclosures/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5jbG9zdXJlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Home/Index.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Shared/_Layout.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Species/Create.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Species/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlY2llc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Species/Delete.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Species/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlY2llc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Species/Edit.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Species/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlY2llc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Species/Index.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Species/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BlY2llc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Tickets/Create.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Tickets/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Tickets/Delete.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Tickets/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/Tickets/Index.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/Tickets/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/_ViewsImports.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/_ViewsImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdzSW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/1/source/repos/WebApplication8/WebApplication8/Views/_ViewStart.cshtml]
+[C:/Users/ben/Desktop/проект vs/faunazoo/WebApplication8/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
