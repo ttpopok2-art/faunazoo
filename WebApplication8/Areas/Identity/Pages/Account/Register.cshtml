@@ -4,38 +4,31 @@
     ViewData["Title"] = "Регистрация";
 }
 
-<div style="display:flex; justify-content:center; align-items:center; min-height:100vh; background: linear-gradient(135deg,#f5f7fa,#e4e9f2);">
-    <div style="width:100%; max-width:400px; background:white; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.08); padding:30px;">
+<div style="display:flex; justify-content:center; align-items:center; min-height:100vh;">
+    <div style="width:100%; max-width:400px; background:white; padding:30px; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
         <h2 style="text-align:center; color:#4361ee; margin-bottom:20px;">Создать аккаунт</h2>
 
         <form method="post">
-            @Html.AntiForgeryToken() <!-- Обязательно для защиты CSRF -->
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
-            <div asp-validation-summary="All" style="color:#f72585; margin-bottom:15px;"></div>
-
-            <div style="margin-bottom:15px;">
+            <div class="mb-3">
                 <label>Email</label>
-                <input asp-for="Input.Email" class="form-control" style="width:100%; padding:10px; border-radius:8px; border:1px solid #e9ecef;" placeholder="example@mail.com" />
-                <span asp-validation-for="Input.Email" style="color:#f72585; font-size:13px;"></span>
+                <input asp-for="Input.Email" class="form-control" placeholder="example@mail.com" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
 
-            <div style="margin-bottom:15px;">
+            <div class="mb-3">
                 <label>Пароль</label>
-                <input asp-for="Input.Password" type="password" class="form-control" style="width:100%; padding:10px; border-radius:8px; border:1px solid #e9ecef;" placeholder="Минимум 6 символов" />
-                <span asp-validation-for="Input.Password" style="color:#f72585; font-size:13px;"></span>
+                <input asp-for="Input.Password" type="password" class="form-control" placeholder="Минимум 6 символов" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
 
-            <div style="margin-bottom:20px;">
-                <label>Подтверждение пароля</label>
-                <input asp-for="Input.ConfirmPassword" type="password" class="form-control" style="width:100%; padding:10px; border-radius:8px; border:1px solid #e9ecef;" placeholder="Повторите пароль" />
-                <span asp-validation-for="Input.ConfirmPassword" style="color:#f72585; font-size:13px;"></span>
-            </div>
-
-            <button type="submit" style="width:100%; padding:12px; background:#4361ee; color:white; border:none; border-radius:8px; font-weight:600; cursor:pointer;">Зарегистрироваться</button>
+            <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
         </form>
 
-        <p style="text-align:center; margin-top:15px; font-size:14px;">
-            Уже есть аккаунт? <a asp-area="Identity" asp-page="/Account/Login" style="color:#4361ee; text-decoration:none;">Войти</a>
+        <p class="text-center mt-3">
+            Уже есть аккаунт? <a asp-area="Identity" asp-page="/Account/Login">Войти</a>
         </p>
     </div>
 </div>

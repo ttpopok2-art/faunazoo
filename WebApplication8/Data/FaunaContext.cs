@@ -1,16 +1,15 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using WebApplication8.Models;
 
 namespace WebApplication8.Data
 {
 
-    public class FaunaContext : IdentityDbContext<IdentityUser, IdentityRole, string>
+    public class FaunaContext : DbContext
     {
         public FaunaContext(DbContextOptions<FaunaContext> options)
-            : base(options) { }
-
+            : base(options)
+        {
+        }
         public DbSet<Species> Species { get; set; }
         public DbSet<Animals> Animals { get; set; }
         public DbSet<Enclosures> Enclosures { get; set; }

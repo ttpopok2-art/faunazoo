@@ -10,9 +10,7 @@ namespace WebApplication8.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
 
-        public RegisterModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager)
+        public RegisterModel(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -29,12 +27,8 @@ namespace WebApplication8.Areas.Identity.Pages.Account
 
             [Required(ErrorMessage = "Введите пароль")]
             [DataType(DataType.Password)]
+            [MinLength(6, ErrorMessage = "Пароль должен быть минимум 6 символов")]
             public string Password { get; set; }
-
-            [Required(ErrorMessage = "Повторите пароль")]
-            [DataType(DataType.Password)]
-            [Compare("Password", ErrorMessage = "Пароли не совпадают.")]
-            public string ConfirmPassword { get; set; }
         }
 
         public void OnGet() { }
@@ -56,8 +50,7 @@ namespace WebApplication8.Areas.Identity.Pages.Account
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, isPersistent: false);
-                // Перенаправляем на Index контроллера Home
-                return LocalRedirect("/Home/Index");
+                return RedirectToAction("Index", "Home");
             }
 
             foreach (var error in result.Errors)

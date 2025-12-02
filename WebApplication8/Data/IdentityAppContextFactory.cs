@@ -9,7 +9,7 @@ namespace WebApplication8.Data
         {
             var optionsBuilder = new DbContextOptionsBuilder<IdentityAppContext>();
             optionsBuilder.UseMySql(
-                "server=localhost;port=3306;database=fauna;user=root;password=mila3454;", // <- поменяй на свои
+                "server=localhost;port=3306;database=fauna_identity;user=root;password=mila3454;", // <- поменяй на свои
                 new MySqlServerVersion(new Version(8, 0, 34))
             );
 
