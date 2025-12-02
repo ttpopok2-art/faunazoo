@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApplication8.Models.Tickets>
+@{
+    ViewData["Title"] = "Билеты";
+    var role = ViewBag.Role as string ?? "user";
+}
+
+<div style="max-width:900px;margin:40px auto;background:white;padding:25px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+    <h2 style="text-align:center;color:#2c3e50;margin-bottom:20px;">🎟️ Список билетов</h2>
+
+    @if (role == "admin")
+    {
+        <div style="text-align:right;margin-bottom:15px;">
+            <a href="/Tickets/Create" style="background:#27ae60;color:white;padding:8px 14px;border-radius:6px;text-decoration:none;">➕ Добавить билет</a>
+        </div>
+    }
+
+    @if (!Model.Any())
+    {
+        <p style="text-align:center;color:#888;">Нет доступных билетов</p>
+    }
+    else
+    {
+        <table style="width:100%;border-collapse:collapse;">
+            <tr style="background:#2980b9;color:white;">
+                <th style="padding:10px;border-radius:6px 0 0 6px;">Тип билета</th>
+                <th>Цена</th>
+                <th>Дата продажи</th>
+                <th>Посетитель</th>
+                @if (role == "admin")
+                {
+                    <th style="border-radius:0 6px 6px 0;">Действия</th>
+                }
+            </tr>
+
+            @foreach (var t in Model)
+            {
+                <tr style="border-bottom:1px solid #eee;text-align:center;">
+                    <td style="padding:8px;">@t.Ticket_type</td>
+                    <td>@t.Price.ToString("0.00") ₸</td>
+                    <td>@t.Sale_date.ToShortDateString()</td>
+                    <td>@t.Visitor?.Full_name</td>
+
+                    @if (role == "admin")
+                    {
+                        <td>
+                            <a href="/Tickets/Delete/@t.Ticket_ID" style="color:#c0392b;">🗑 Удалить</a>
+                        </td>
+                    }
+                </tr>
+            }
+        </table>
+    }
+</div>

@@ -1,0 +1,17 @@
+﻿@model WebApplication8.Models.Enclosures
+
+@{
+    ViewData["Title"] = "Удалить вольер";
+}
+
+<div style="max-width:600px; margin:40px auto; background:white; padding:25px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center;">
+    <h2 style="color:#c0392b;">Удалить вольер</h2>
+    <p>Вы уверены, что хотите удалить вольер <strong>@Model.Type</strong> (локация: @Model.Location)?</p>
+
+    <form method="post">
+        <input type="hidden" name="Enclosure_ID" value="@Model.Enclosure_ID" />
+
+        <button type="submit" style="background:#c0392b; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; margin-right:10px;">🗑 Удалить</button>
+        <a href="/Enclosures/Index" style="background:#95a5a6; color:white; padding:10px 20px; border-radius:5px; text-decoration:none;">Отмена</a>
+    </form>
+</div>

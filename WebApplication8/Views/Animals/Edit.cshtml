@@ -1,0 +1,57 @@
+﻿@model WebApplication8.Models.Animals
+@{
+    ViewData["Title"] = "Редактировать животное";
+}
+
+<div style="max-width:600px; margin:40px auto; background:white; padding:25px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+    <h2 style="text-align:center; color:#2c3e50; margin-bottom:20px;">Редактировать животное</h2>
+
+    <form asp-action="Edit" enctype="multipart/form-data" method="post"
+          style="display:flex; flex-direction:column; gap:12px;">
+
+        <input type="hidden" name="Animal_ID" value="@Model.Animal_ID" />
+
+        <label>Имя</label>
+        <input type="text" name="Name" value="@Model.Name" required
+               style="padding:8px; border:1px solid #ccc; border-radius:6px;" />
+
+        <label>Пол</label>
+        <select name="Gender" required style="padding:8px; border:1px solid #ccc; border-radius:6px;">
+            <option value="М" @(Model.Gender == "М" ? "selected" : "")>Мужской</option>
+            <option value="Ж" @(Model.Gender == "Ж" ? "selected" : "")>Женский</option>
+        </select>
+
+        <label>Дата рождения</label>
+        <input type="date" name="Date_of_birth" value="@(Model.Date_of_birth?.ToString("yyyy-MM-dd"))"
+               style="padding:8px; border:1px solid #ccc; border-radius:6px;" />
+
+        <label>Состояние здоровья</label>
+        <input type="text" name="Health_status" value="@Model.Health_status"
+               style="padding:8px; border:1px solid #ccc; border-radius:6px;" />
+
+        <label>Вид</label>
+        <select name="Species_ID" style="padding:8px; border:1px solid #ccc; border-radius:6px;">
+            @foreach (var s in ViewBag.SpeciesList)
+            {
+                <option value="@s.Species_ID" @(s.Species_ID == Model.Species_ID ? "selected" : "")>@s.Species_name</option>
+            }
+        </select>
+
+        <label>Текущее фото</label>
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Model.ImageUrl" alt="Фото животного"
+                 style="width:180px; border-radius:8px; margin:10px 0;" />
+        }
+        else
+        {
+            <p style="color:gray;">Фото отсутствует</p>
+        }
+
+        <label>Новое фото</label>
+        <input type="file" name="imageFile" accept="image/*"
+               style="padding:8px; border:1px solid #ccc; border-radius:6px;" />
+
+        <div style="margin-top:15px; display:flex; justify-content:center; gap:10px;">
+            <button type="submit"
+                    style="background:#2980b9; color:white; border:none; padding:10px 20px; border-radius:6px; c

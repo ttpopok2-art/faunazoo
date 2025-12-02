@@ -1,0 +1,118 @@
+﻿@model WebApplication8.Models.Employees
+@{
+    ViewData["Title"] = "Добавить сотрудника";
+}
+
+<style>
+    .dropdown {
+        position: relative;
+        width: 100%;
+    }
+
+    .dropdown-btn {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background: white;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background: white;
+        min-width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 10;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content label {
+        display: flex;
+        align-items: center;
+        padding: 8px 10px;
+        cursor: pointer;
+    }
+
+        .dropdown-content label:hover {
+            background-color: #f1f1f1;
+        }
+
+    input[type="radio"] {
+        margin-right: 8px;
+    }
+</style>
+
+<div style="display:flex; justify-content:center; align-items:center; min-height:90vh; background:#f5f6fa;">
+    <div style="width:100%; max-width:600px; background:white; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:30px;">
+        <h2 style="text-align:center; color:#2c3e50; margin-bottom:25px;">Добавление сотрудника</h2>
+
+        @if (ViewBag.ModelErrors != null)
+        {
+            <div style="background:#ffe0e0; border:1px solid #ff9999; color:#b30000; padding:10px; border-radius:8px; margin-bottom:10px;">
+                <b>Ошибки:</b><br />
+                @Html.Raw(ViewBag.ModelErrors)
+            </div>
+        }
+
+        <form asp-action="Create" enctype="multipart/form-data" method="post" style="display:flex; flex-direction:column; gap:15px;">
+
+            <div>
+                <label>ФИО сотрудника</label>
+                <input type="text" name="Full_name" value="@Model?.Full_name" placeholder="Введите ФИО" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;" />
+            </div>
+
+            <div>
+                <label>Должность</label>
+                <input type="text" name="Position" value="@Model?.Position" placeholder="Введите должность" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;" />
+            </div>
+
+            <div>
+                <label>Телефон</label>
+                <input type="text" name="Phone_number" value="@Model?.Phone_number" placeholder="Введите телефон" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;" />
+            </div>
+
+            <div>
+                <label>Стаж (в годах)</label>
+                <input type="number" name="Work_experience" value="@Model?.Work_experience" min="0" placeholder="Например: 5" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;" />
+            </div>
+
+            <div>
+                <label>Вольер</label>
+                <div class="dropdown">
+                    <div class="dropdown-btn">Выбрать вольер</div>
+                    <div class="dropdown-content">
+                        <label>
+                            <input type="radio" name="Enclosure_ID" value="" checked /> Без вольера
+                        </label>
+                        @foreach (var e in (IEnumerable<WebApplication8.Models.Enclosures>)ViewBag.Enclosures)
+                        {
+                            <label>
+                                <input type="radio" name="Enclosure_ID" value="@e.Enclosure_ID" /> @e.Type
+                            </label>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <label>Фотография</label>
+                <input type="file" name="imageFile" accept="image/*" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;" />
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:15px; margin-top:15px;">
+                <button type="submit" style="background:#27ae60; color:white; padding:10px 25px; border:none; border-radius:8px; font-weight:600; cursor:pointer;">Сохранить</button>
+                <a asp-action="Index" style="background:#bdc3c7; color:#2c3e50; padding:10px 25px; border-radius:8px; text-decoration:none; font-weight:600;">Отмена</a>
+            </div>
+        </form>
+    </div>
+</div>

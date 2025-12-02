@@ -1,0 +1,153 @@
+﻿@model IEnumerable<WebApplication8.Models.Animals>
+
+@{
+    ViewData["Title"] = "Животные";
+    // ✅ Безопасное приведение типа
+    var selectedSpecies = (ViewBag.SelectedSpecies as IEnumerable<string>)?.ToList() ?? new List<string>();
+}
+
+<div style="padding:25px;">
+    <h2 style="text-align:center; margin-bottom:20px;">Наши животные 🐾</h2>
+
+    <form method="get" asp-action="Index"
+          style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:20px;">
+
+        <input type="text" name="searchName" placeholder="Имя животного"
+               value="@Context.Request.Query["searchName"]"
+               style="padding:8px; border:1px solid #ccc; border-radius:5px; width:220px;" />
+
+        <!-- ✅ Выпадающий список с чекбоксами -->
+        <div class="multiselect">
+            <div class="selectBox" onclick="toggleCheckboxList()">
+                <select>
+                    <option>Выберите виды</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+            <div id="checkboxes" style="display:none;">
+                @foreach (var s in ViewBag.SpeciesList)
+                {
+                    <label>
+                        <input type="checkbox" name="speciesNames" value="@s.Species_name"
+                        @(selectedSpecies.Contains(s.Species_name) ? "checked" : "") />
+                        @s.Species_name
+                    </label>
+                }
+            </div>
+        </div>
+
+        <select name="gender" style="padding:8px; border-radius:5px; border:1px solid #ccc; width:150px;">
+            <option value="">Любой пол</option>
+            <option value="М" @(ViewBag.SelectedGender == "М" ? "selected" : "")>Мужской</option>
+            <option value="Ж" @(ViewBag.SelectedGender == "Ж" ? "selected" : "")>Женский</option>
+        </select>
+
+        <select name="health" style="padding:8px; border-radius:5px; border:1px solid #ccc; width:180px;">
+            <option value="">Любое состояние</option>
+            <option value="Здоров" @(ViewBag.SelectedHealth == "Здоров" ? "selected" : "")>Здоров</option>
+            <option value="Болен" @(ViewBag.SelectedHealth == "Болен" ? "selected" : "")>Болен</option>
+            <option value="Требует осмотра" @(ViewBag.SelectedHealth == "Требует осмотра" ? "selected" : "")>Требует осмотра</option>
+        </select>
+
+        <button type="submit"
+                style="background:#2980b9; color:white; padding:8px 15px; border:none; border-radius:5px; cursor:pointer;">
+            🔍 Применить фильтр
+        </button>
+
+        <a href="/Animals/Index"
+           style="background:#95a5a6; color:white; padding:8px 15px; border-radius:5px; text-decoration:none;">
+            Сбросить
+        </a>
+    </form>
+
+    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+        @if (!Model.Any())
+        {
+            <p style="text-align:center; color:gray;">Ничего не найдено по выбранным фильтрам 🦥</p>
+        }
+        else
+        {
+            foreach (var a in Model)
+            {
+                var genderText = a.Gender == "М" ? "Мужской" : (a.Gender == "Ж" ? "Женский" : "Не указан");
+
+                <div style="width:280px; background:white; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); overflow:hidden; text-align:center;">
+                    <img src="@a.ImageUrl" alt="@a.Name" style="width:100%; height:180px; object-fit:cover;" />
+
+                    <div style="padding:15px;">
+                        <h3 style="margin:10px 0; color:#2c3e50;">@a.Name</h3>
+                        <p style="font-size:14px; color:#555; margin:0;">@a.Species?.Species_name</p>
+                        <p style="color:#777; margin:5px 0;">Пол: <strong>@genderText</strong></p>
+                        <p style="color:@(a.Health_status == "Болен" ? "red" : "green"); font-weight:bold;">@a.Health_status</p>
+
+                        <div style="margin-top:10px;">
+                            <a href="/Animals/Edit/@a.Animal_ID" style="color:#2980b9; margin-right:10px;">✏ Редактировать</a>
+                            <a href="/Animals/Delete/@a.Animal_ID" style="color:#c0392b;">🗑 Удалить</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="/Animals/Create"
+           style="background:#27ae60; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">
+            ➕ Добавить животное
+        </a>
+    </div>
+</div>
+
+<style>
+    .multiselect {
+        position: relative;
+        width: 220px;
+        font-family: sans-serif;
+    }
+
+    .selectBox select {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .overSelect {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    #checkboxes {
+        display: none;
+        border: 1px solid #ccc;
+        background: white;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+        #checkboxes label {
+            display: block;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+            #checkboxes label:hover {
+                background-color: #f0f0f0;
+            }
+</style>
+
+<script>
+        let expanded = false;
+    function toggleCheckboxList() {
+        const checkboxes = document.getElementById("checkboxes");
+        checkboxes.style.display = expanded ? "none" : "block";
+        expanded = !expanded;
+    }
+</script>

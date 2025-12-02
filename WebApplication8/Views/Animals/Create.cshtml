@@ -1,0 +1,55 @@
+﻿@model WebApplication8.Models.Animals
+@{
+    ViewData["Title"] = "Добавить животное";
+}
+
+<div style="max-width:600px; margin:40px auto; background:white; padding:25px; border-radius:10px;">
+    <h2 style="text-align:center;">Добавить животное</h2>
+    @Html.ValidationSummary(false, "", new { @class = "text-danger", style = "margin-bottom:10px;" })
+    <form asp-action="Create" asp-controller="Animals" method="post" enctype="multipart/form-data" style="display:flex; flex-direction:column; gap:15px;">
+        @Html.AntiForgeryToken()
+
+        <label for="Name">Имя</label>
+        <input id="Name" name="Name" type="text" value="@Model?.Name" required class="form-control" />
+
+        <label for="Gender">Пол</label>
+        <select id="Gender" name="Gender" required class="form-select">
+            <option value="">-- выберите --</option>
+            <option value="М" @(Model?.Gender == "М" ? "selected" : "")>Мужской</option>
+            <option value="Ж" @(Model?.Gender == "Ж" ? "selected" : "")>Женский</option>
+        </select>
+
+        <label for="Date_of_birth">Дата рождения</label>
+        <input id="Date_of_birth" name="Date_of_birth" type="date" value="@(Model?.Date_of_birth?.ToString("yyyy-MM-dd"))" class="form-control" />
+
+        <label for="Health_status">Состояние здоровья</label>
+        <select id="Health_status" name="Health_status" class="form-select">
+            <option value="">-- выберите --</option>
+            <option value="Здоров" @(Model?.Health_status == "Здоров" ? "selected" : "")>Здоров</option>
+            <option value="Болен" @(Model?.Health_status == "Болен" ? "selected" : "")>Болен</option>
+            <option value="Требует осмотра" @(Model?.Health_status == "Требует осмотра" ? "selected" : "")>Требует осмотра</option>
+        </select>
+
+        <label for="Species_ID">Вид</label>
+        <select id="Species_ID" name="Species_ID" required class="form-select">
+            <option value="">-- выберите вид --</option>
+            @if (ViewBag.SpeciesList != null)
+            {
+                foreach (var s in ViewBag.SpeciesList)
+                {
+                    <option value="@s.Species_ID" @(Model?.Species_ID == s.Species_ID ? "selected" : "")>@s.Species_name</option>
+                }
+            }
+        </select>
+
+        <label for="imageFile">Фото животного</label>
+        <input id="imageFile" name="imageFile" type="file" accept="image/*" class="form-control" />
+
+        <div style="margin-top:15px; display:flex; justify-content:space-between; align-items:center;">
+            <button type="submit" style="background:#27ae60; color:white; padding:10px 20px; border:none; border-radius:6px; cursor:pointer;">
+                💾 Сохранить
+            </button>
+            <a href="/Animals" style="text-decoration:none; color:#555;">Отмена</a>
+        </div>
+    </form>
+</div>

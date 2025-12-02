@@ -1,0 +1,34 @@
+﻿@model WebApplication8.Models.Employees
+
+@{
+    ViewData["Title"] = "Удалить сотрудника";
+}
+
+<div style="max-width:500px; margin:40px auto; background:white; padding:25px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center;">
+    <h2>Удалить сотрудника</h2>
+
+    <div style="margin-top:15px;">
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Model.ImageUrl" alt="@Model.Full_name" style="width:200px; height:200px; object-fit:cover; border-radius:5px;" />
+        }
+        else
+        {
+            <p style="color:#888;">Нет фото</p>
+        }
+    </div>
+
+    <p style="margin-top:10px;"><strong>@Model.Full_name</strong></p>
+    <p>@Model.Position</p>
+    <p>Телефон: @Model.Phone_number</p>
+    <p>Стаж: @Model.Work_experience лет</p>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="Employee_ID" value="@Model.Employee_ID" />
+        <p style="color:red; margin-top:20px;">Вы уверены, что хотите удалить этого сотрудника?</p>
+        <div style="margin-top:20px;">
+            <button type="submit" style="background:#c0392b; color:white; padding:10px 20px; border:none; border-radius:5px;">Удалить</button>
+            <a href="/Employees" style="margin-left:10px; color:#555;">Отмена</a>
+        </div>
+    </form>
+</div>

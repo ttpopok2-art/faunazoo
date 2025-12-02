@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\1\\source\\repos\\WebApplication8\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1B273241-8437-48C1-9D4A-563FD5A5941B}|WebApplication8\\WebApplication8.csproj|c:\\users\\1\\source\\repos\\webapplication8\\webapplication8\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B273241-8437-48C1-9D4A-563FD5A5941B}|WebApplication8\\WebApplication8.csproj|solutionrelative:webapplication8\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B273241-8437-48C1-9D4A-563FD5A5941B}|WebApplication8\\WebApplication8.csproj|c:\\users\\1\\source\\repos\\webapplication8\\webapplication8\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B273241-8437-48C1-9D4A-563FD5A5941B}|WebApplication8\\WebApplication8.csproj|solutionrelative:webapplication8\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B273241-8437-48C1-9D4A-563FD5A5941B}|WebApplication8\\WebApplication8.csproj|c:\\users\\1\\source\\repos\\webapplication8\\webapplication8\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1B273241-8437-48C1-9D4A-563FD5A5941B}|WebApplication8\\WebApplication8.csproj|solutionrelative:webapplication8\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B273241-8437-48C1-9D4A-563FD5A5941B}|WebApplication8\\WebApplication8.csproj|c:\\users\\1\\source\\repos\\webapplication8\\webapplication8\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1B273241-8437-48C1-9D4A-563FD5A5941B}|WebApplication8\\WebApplication8.csproj|solutionrelative:webapplication8\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B273241-8437-48C1-9D4A-563FD5A5941B}|WebApplication8\\WebApplication8.csproj|c:\\users\\1\\source\\repos\\webapplication8\\webapplication8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B273241-8437-48C1-9D4A-563FD5A5941B}|WebApplication8\\WebApplication8.csproj|solutionrelative:webapplication8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication8\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication8\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T17:40:35.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "WebApplication8\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "WebApplication8\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AgIAADYAAABgZmZmZmYkwDsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T17:14:37.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "WebApplication8\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "WebApplication8\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAABcAAAAAAAAAAADwvxkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-25T15:25:25.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication8\\Program.cs",
+              "ToolTip": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\Program.cs",
+              "RelativeToolTip": "WebApplication8\\Program.cs",
+              "ViewState": "AgIAABkAAADAMjMzMzMTwCkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T10:30:53.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication8\\appsettings.json",
+              "ToolTip": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\appsettings.json",
+              "RelativeToolTip": "WebApplication8\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-23T10:27:58.556Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

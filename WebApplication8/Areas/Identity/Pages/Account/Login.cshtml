@@ -1,0 +1,289 @@
+﻿@page
+@model WebApplication8.Areas.Identity.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Вход";
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #7209b7;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --success: #4cc9f0;
+            --error: #f72585;
+            --border-radius: 12px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 440px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .auth-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 30px 30px 25px;
+            text-align: center;
+        }
+
+            .auth-header h2 {
+                font-size: 28px;
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+
+            .auth-header p {
+                opacity: 0.9;
+                font-size: 15px;
+            }
+
+        .auth-body {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--gray-light);
+            border-radius: 8px;
+            font-size: 15px;
+            transition: var(--transition);
+            background-color: white;
+        }
+
+            .form-control:focus {
+                outline: none;
+                border-color: var(--primary);
+                box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+            }
+
+            .form-control.error {
+                border-color: var(--error);
+            }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+
+            .checkbox-group input {
+                margin-right: 10px;
+                width: 18px;
+                height: 18px;
+                accent-color: var(--primary);
+            }
+
+            .checkbox-group label {
+                font-size: 14px;
+                color: var(--gray);
+                cursor: pointer;
+                user-select: none;
+            }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+            .btn:hover {
+                background: var(--primary-dark);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+            }
+
+            .btn:active {
+                transform: translateY(0);
+            }
+
+        .validation-error {
+            display: block;
+            color: var(--error);
+            font-size: 13px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .auth-footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+            .auth-footer a {
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 600;
+                transition: var(--transition);
+            }
+
+                .auth-footer a:hover {
+                    text-decoration: underline;
+                }
+
+        .input-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            pointer-events: none;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+
+            .forgot-password a {
+                color: var(--primary);
+                text-decoration: none;
+                font-size: 14px;
+                transition: var(--transition);
+            }
+
+                .forgot-password a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-header">
+            <h2>С возвращением</h2>
+            <p>Войдите в свой аккаунт</p>
+        </div>
+        <div class="auth-body">
+            <form method="post">
+                <div class="form-group">
+                    <label class="form-label" for="email">Электронная почта</label>
+                    <div class="input-wrapper">
+                        <input asp-for="Input.Email" class="form-control" id="email" placeholder="example@mail.com" />
+                        <span class="input-icon">✉️</span>
+                    </div>
+                    <span asp-validation-for="Input.Email" class="validation-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Пароль</label>
+                    <div class="input-wrapper">
+                        <input asp-for="Input.Password" type="password" class="form-control" id="password" placeholder="Введите ваш пароль" />
+                        <span class="input-icon">🔒</span>
+                    </div>
+                    <span asp-validation-for="Input.Password" class="validation-error"></span>
+                </div>
+
+                <div class="forgot-password">
+                    <a asp-page="./ForgotPassword">Забыли пароль?</a>
+                </div>
+
+                <div class="checkbox-group">
+                    <input asp-for="Input.RememberMe" id="rememberMe" />
+                    <label for="rememberMe">Запомнить меня</label>
+                </div>
+
+                <button type="submit" class="btn">Войти</button>
+            </form>
+            <div class="auth-footer">
+                Нет аккаунта? <a asp-area="Identity" asp-page="/Account/Register">Зарегистрироваться</a>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const emailInput = document.getElementById('email');
+                const passwordInput = document.getElementById('password');
+
+                if (localStorage.getItem('rememberMe') === 'true') {
+                    document.getElementById('rememberMe').checked = true;
+                    const savedEmail = localStorage.getItem('savedEmail');
+                    if (savedEmail) {
+                        emailInput.value = savedEmail;
+                    }
+                }
+
+                emailInput.addEventListener('blur', function () {
+                    if (document.getElementById('rememberMe').checked) {
+                        localStorage.setItem('savedEmail', this.value);
+                    }
+                });
+
+                document.getElementById('rememberMe').addEventListener('change', function () {
+                    localStorage.setItem('rememberMe', this.checked);
+                    if (!this.checked) {
+                        localStorage.removeItem('savedEmail');
+                    }
+                });
+            });
+        </script>
+    }
+</body>
+</html>

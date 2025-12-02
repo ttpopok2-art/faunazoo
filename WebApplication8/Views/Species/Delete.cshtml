@@ -1,0 +1,17 @@
+﻿@model WebApplication8.Models.Species
+
+@{
+    ViewData["Title"] = "Удалить вид";
+}
+
+<div style="max-width:600px; margin:40px auto; background:white; padding:25px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center;">
+    <h2 style="color:#c0392b;">Удалить вид</h2>
+    <p>Вы уверены, что хотите удалить вид <strong>@Model.Species_name</strong>?</p>
+
+    <form method="post">
+        <input type="hidden" name="Species_ID" value="@Model.Species_ID" />
+
+        <button type="submit" style="background:#c0392b; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; margin-right:10px;">🗑 Удалить</button>
+        <a href="/Species/Index" style="background:#95a5a6; color:white; padding:10px 20px; border-radius:5px; text-decoration:none;">Отмена</a>
+    </form>
+</div>

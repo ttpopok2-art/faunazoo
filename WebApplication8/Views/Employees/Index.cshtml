@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebApplication8.Models.Employees>
+
+@{
+    ViewData["Title"] = "Сотрудники";
+}
+
+<div style="padding:30px;">
+    <h2 style="text-align:center;">Сотрудники зоопарка</h2>
+
+    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+        @foreach (var e in Model)
+        {
+            <div style="width:260px; background:white; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center; overflow:hidden;">
+                <img src="@e.ImageUrl" alt="@e.Full_name" style="width:100%; height:180px; object-fit:cover;" />
+                <div style="padding:10px;">
+                    <h3>@e.Full_name</h3>
+                    <p>@e.Position</p>
+                    <p>Телефон: @e.Phone_number</p>
+                    <p>Стаж: @e.Work_experience лет</p>
+                    @if (e.Enclosure != null)
+                    {
+                        <p>Вольер: @e.Enclosure.Type</p>
+                    }
+                    <div style="margin-top:10px;">
+                        <a href="/Employees/Edit/@e.Employee_ID" style="margin-right:10px; color:#2980b9;">✏ Редактировать</a>
+                        <a href="/Employees/Delete/@e.Employee_ID" style="color:#c0392b;">🗑 Удалить</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="/Employees/Create" style="background:#27ae60; color:white; padding:10px 20px; border-radius:5px; text-decoration:none;">➕ Добавить сотрудника</a>
+    </div>
+</div>

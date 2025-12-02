@@ -1,0 +1,26 @@
+﻿@model WebApplication8.Models.Animals
+@{
+    ViewData["Title"] = "Удалить животное";
+}
+
+<div style="max-width:500px; margin:60px auto; background:white; padding:30px; border-radius:10px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+    <h2 style="color:#c0392b; margin-bottom:15px;">Удалить животное</h2>
+
+    <p>Вы уверены, что хотите удалить животное <strong>@Model.Name</strong>?</p>
+
+    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <img src="@Model.ImageUrl" alt="@Model.Name"
+             style="width:200px; border-radius:10px; margin:15px 0;" />
+    }
+
+    <form asp-action="Delete" method="post" style="margin-top:10px;">
+        <input type="hidden" name="Animal_ID" value="@Model.Animal_ID" />
+        <button type="submit"
+                style="background:#e74c3c; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer;">
+            🗑 Удалить
+        </button>
+        <a href="/Animals"
+           style="display:inline-block; margin-left:15px; text-decoration:none; color:#333; border:1px solid #ccc; padding:9px 18px; border-radius:6px;">
+            Отмена
+        </a>

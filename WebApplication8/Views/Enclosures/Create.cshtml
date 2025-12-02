@@ -1,0 +1,81 @@
+﻿@model WebApplication8.Models.Enclosures
+
+@{
+    ViewData["Title"] = "Добавить вольер";
+    var animalsList = ViewBag.Animals as List<WebApplication8.Models.Animals>; // список животных из контроллера
+}
+
+<div style="max-width:700px; margin:40px auto; background:white; padding:25px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+    <h2 style="text-align:center; margin-bottom:20px;">Добавить новый вольер</h2>
+
+    <form method="post" enctype="multipart/form-data" style="display:flex; flex-direction:column; gap:15px;">
+
+        <label>Название вольера</label>
+        <input type="text" name="Type" required placeholder="Например: Тропический дом"
+               style="padding:8px; border:1px solid #ccc; border-radius:5px;" />
+
+        <label>Выбрать животных для вольера</label>
+        <div class="animals-checkbox-list">
+            @foreach (var animal in animalsList!)
+            {
+                <div class="animal-item">
+                    <input type="checkbox" name="SelectedAnimalIds" value="@animal.Animal_ID" />
+                    <label>
+                        @animal.Name (@animal.Species?.Species_name)
+                    </label>
+                </div>
+            }
+        </div>
+        <small style="color:#555;">Выберите одного или нескольких животных</small>
+
+        <label>Локация</label>
+        <input type="text" name="Location" required placeholder="Например: Сектор A"
+               style="padding:8px; border:1px solid #ccc; border-radius:5px;" />
+
+        <label>Размер (м²)</label>
+        <input type="number" name="Size" required placeholder="Например: 250" min="1"
+               style="padding:8px; border:1px solid #ccc; border-radius:5px;" />
+
+        <label>Вместимость (количество животных)</label>
+        <input type="number" name="Capacity" required placeholder="Максимум животных" min="1"
+               style="padding:8px; border:1px solid #ccc; border-radius:5px;" />
+
+        <label>Загрузить фото</label>
+        <input type="file" name="imageFile" accept="image/*" style="padding:8px;" />
+
+        <div style="display:flex; justify-content:space-between; margin-top:20px;">
+            <button type="submit"
+                    style="background:#27ae60; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
+                💾 Сохранить
+            </button>
+            <a href="/Enclosures/Index"
+               style="background:#95a5a6; color:white; padding:10px 20px; border-radius:5px; text-decoration:none;">
+                Отмена
+            </a>
+        </div>
+    </form>
+</div>
+<style>
+    .animals-checkbox-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        background: #fafafa;
+    }
+
+    .animal-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+        .animal-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+        }
+</style>

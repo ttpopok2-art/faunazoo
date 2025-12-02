@@ -1,0 +1,151 @@
+﻿@model IEnumerable<WebApplication8.Models.Species>
+
+@{
+    ViewData["Title"] = "Виды животных";
+    var selectedTypes = ViewBag.SelectedTypes as string[] ?? Array.Empty<string>();
+}
+
+<div style="padding:25px;">
+    <h2 style="text-align:center; margin-bottom:20px;">Виды животных</h2>
+
+    <form method="get" asp-action="Index"
+          style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:20px;">
+
+        <input type="text" name="search" placeholder="Поиск по названию или описанию"
+               value="@Context.Request.Query["search"]"
+               style="padding:8px; border:1px solid #ccc; border-radius:5px; width:250px;" />
+
+        <div class="multiselect">
+            <div class="selectBox" onclick="toggleCheckboxList()">
+                <select>
+                    <option>Выберите виды</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+            <div id="checkboxes" style="display:none;">
+                <label>
+                    <input type="checkbox" name="filterTypes" value="normal"
+                    @(selectedTypes.Contains("normal") ? "checked" : "") />
+                    Обычные
+                </label>
+                <label>
+                    <input type="checkbox" name="filterTypes" value="rare"
+                    @(selectedTypes.Contains("rare") ? "checked" : "") />
+                    Редкие
+                </label>
+                <label>
+                    <input type="checkbox" name="filterTypes" value="endangered"
+                    @(selectedTypes.Contains("endangered") ? "checked" : "") />
+                    Вымирающие
+                </label>
+            </div>
+        </div>
+
+        <button type="submit"
+                style="background:#2980b9; color:white; padding:8px 15px; border:none; border-radius:5px; cursor:pointer;">
+            🔍 Поиск
+        </button>
+
+        <a href="/Species/Index"
+           style="background:#95a5a6; color:white; padding:8px 15px; border-radius:5px; text-decoration:none;">
+            Сбросить
+        </a>
+    </form>
+
+    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+        @foreach (var s in Model)
+        {
+            <div style="width:280px; background:white; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); overflow:hidden; text-align:center;">
+                <img src="@s.ImageUrl" alt="@s.Species_name" style="width:100%; height:180px; object-fit:cover;" />
+
+                <div style="padding:15px;">
+                    <h3 style="margin:10px 0; color:#2c3e50;">@s.Species_name</h3>
+                    <p style="font-size:14px; color:#555; min-height:60px;">@s.Description</p>
+
+                    @if (s.IsEndangered)
+                    {
+                        <p style="color:red; font-weight:bold;">⚠ Вымирающий вид</p>
+                    }
+                    else if (s.IsRare)
+                    {
+                        <p style="color:orange; font-weight:bold;">★ Редкий вид</p>
+                    }
+                    else
+                    {
+                        <p style="color:green; font-weight:bold;">Обычный вид</p>
+                    }
+
+                    <div style="margin-top:10px;">
+                        <a href="/Species/Edit/@s.Species_ID" style="color:#2980b9; margin-right:10px;">✏ Редактировать</a>
+                        <a href="/Species/Delete/@s.Species_ID" style="color:#c0392b;">🗑 Удалить</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="/Species/Create"
+           style="background:#27ae60; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">
+            ➕ Добавить вид
+        </a>
+    </div>
+</div>
+
+<style>
+    .multiselect {
+        position: relative;
+        width: 220px;
+        font-family: sans-serif;
+    }
+
+    .selectBox {
+        position: relative;
+    }
+
+        .selectBox select {
+            width: 100%;
+            font-size: 14px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+    .overSelect {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    #checkboxes {
+        display: none;
+        border: 1px solid #ccc;
+        background: white;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+        #checkboxes label {
+            display: block;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+            #checkboxes label:hover {
+                background-color: #f0f0f0;
+            }
+</style>
+
+<script>
+    let expanded = false;
+    function toggleCheckboxList() {
+        const checkboxes = document.getElementById("checkboxes");
+        checkboxes.style.display = expanded ? "none" : "block";
+        expanded = !expanded;
+    }
+</script>

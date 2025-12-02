@@ -1,0 +1,28 @@
+﻿/* wwwroot/css/site.css */
+body {
+    background: #f6f8fa;
+    color: #222;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.container {
+    max-width: 1100px;
+}
+
+.table thead {
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    color: #fff;
+}
+
+.table tbody tr:hover {
+    background: #eef3ff;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin-right: 6px;
+}

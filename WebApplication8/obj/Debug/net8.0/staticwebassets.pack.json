@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\wwwroot\\images\\animals\\948514e5-18f2-49d7-83d5-7d19f9112fa2.jpg",
+      "PackagePath": "staticwebassets\\images\\animals\\948514e5-18f2-49d7-83d5-7d19f9112fa2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\1\\source\\repos\\WebApplication8\\WebApplication8\\wwwroot\\images\\animals\\b4934f5b-1817-4359-bff2-20262867317f.jpg",
+      "PackagePath": "staticwebassets\\images\\animals\\b4934f5b-1817-4359-bff2-20262867317f.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebApplication8.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WebApplication8.props",
+      "PackagePath": "build\\WebApplication8.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WebApplication8.props",
+      "PackagePath": "buildMultiTargeting\\WebApplication8.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WebApplication8.props",
+      "PackagePath": "buildTransitive\\WebApplication8.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
